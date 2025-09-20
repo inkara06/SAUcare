@@ -81,7 +81,7 @@ python main.py
 - psycopg2-binary, pandas, sqlalchemy
 - Apache Superset (optional dashboard)
 - VS Code / Sublime Text for editing
-### Project author: Inkar Usurbayeva
+### Project author: Inkar Ussurbayeva
 
 
 
