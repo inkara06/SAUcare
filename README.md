@@ -74,14 +74,13 @@ psql -U postgres -d hospital_management -f queries.sql
 ### 7. Run Python script
 main.py connects to the DB, runs a few queries and prints results. Example:
 python main.py
-Tools & resources
-PostgreSQL 14 (server)
-pgAdmin (GUI for DB)
-Python 3.10+, pip
-psycopg2-binary, pandas, sqlalchemy
-Apache Superset (optional dashboard)
-VS Code / Sublime Text for editing
-Kaggle (source data)
+### Tools & resources
+- PostgreSQL 14 (server)
+- pgAdmin (GUI for DB)
+- Python 3.10+, pip
+- psycopg2-binary, pandas, sqlalchemy
+- Apache Superset (optional dashboard)
+- VS Code / Sublime Text for editing
 ### Project author: Inkar Usurbayeva
 
 
