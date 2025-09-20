@@ -33,6 +33,7 @@ Files (CSV) used in the project (stored in `archive/`):
 - `requirements.txt` — Python dependencies  
 - `archive/` — CSV files (not included in repo if large)  
 - `images/` — ER diagram
+- `data.sql` - importing CSV files 
 
 ---
 
@@ -69,7 +70,7 @@ Then in psql shell use file `data.sql`
 If columns in CSV contain prefixed IDs like P001, ensure corresponding table columns are TEXT (not integer).
 ### 6. Run analytical queries
 Open queries.sql and run queries in pgAdmin or psql to verify results:
-psql -U postgres -d hospital_management -f queries.sql
+psql -U postgres -d hospital_management -f queries.sql  
 ### 7. Run Python script
 main.py connects to the DB, runs a few queries and prints results. Example:
 python main.py
@@ -81,7 +82,7 @@ psycopg2-binary, pandas, sqlalchemy
 Apache Superset (optional dashboard)
 VS Code / Sublime Text for editing
 Kaggle (source data)
-Project author: Inkar Usurbayeva
+### Project author: Inkar Usurbayeva
 
 
 
