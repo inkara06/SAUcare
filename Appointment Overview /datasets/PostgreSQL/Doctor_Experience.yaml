@@ -1,0 +1,82 @@
+table_name: Doctor Experience
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: hospital_management
+schema: null
+sql: "SELECT \n    d.doctor_id,\n    d.years_experience,\n    COUNT(a.appointment_id)\
+  \ AS total_appointments,\n    COUNT(DISTINCT a.patient_id) AS unique_patients\n\
+  FROM doctors d\nLEFT JOIN appointments a ON d.doctor_id = a.doctor_id\nGROUP BY\
+  \ d.doctor_id, d.years_experience\nHAVING COUNT(a.appointment_id) > 0\nORDER BY\
+  \ d.years_experience;\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 063099bd-f6fc-4dea-b8bc-666f0870f226
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: total_appointments
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: unique_patients
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: years_experience
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: doctor_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 863ccd17-dbed-4373-9e68-ac408def1dd3

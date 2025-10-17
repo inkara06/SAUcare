@@ -1,0 +1,57 @@
+slice_name: Monthly Appointment Trends
+description: null
+certified_by: null
+certification_details: null
+viz_type: compare
+params:
+  datasource: 1__table
+  viz_type: compare
+  slice_id: 4
+  granularity_sqla: appointment_date
+  time_grain_sqla: P1M
+  time_range: No filter
+  metrics:
+  - expressionType: SQL
+    sqlExpression: "COUNT(appointment_id) \n\n"
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: "COUNT(appointment_id) \n\n"
+    optionName: metric_2szfhm67lgb_glu2d5ewqo
+  adhoc_filters:
+  - clause: WHERE
+    subject: appointment_date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  groupby: []
+  row_limit: 10000
+  color_scheme: supersetColors
+  bottom_margin: auto
+  x_ticks_layout: auto
+  x_axis_format: smart_date
+  left_margin: auto
+  y_axis_format: SMART_NUMBER
+  y_axis_bounds:
+  - null
+  - null
+  rolling_type: None
+  comparison_type: values
+  annotation_layers: []
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":1,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"appointment_date","filters":[{"col":"appointment_date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"time_grain_sqla":"P1M","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(appointment_id)
+  \n\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"COUNT(appointment_id)
+  \n\n","optionName":"metric_2szfhm67lgb_glu2d5ewqo"}],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"1__table","viz_type":"compare","slice_id":4,"granularity_sqla":"appointment_date","time_grain_sqla":"P1M","time_range":"No
+  filter","metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(appointment_id)
+  \n\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"COUNT(appointment_id)
+  \n\n","optionName":"metric_2szfhm67lgb_glu2d5ewqo"}],"adhoc_filters":[{"clause":"WHERE","subject":"appointment_date","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"groupby":[],"row_limit":10000,"color_scheme":"supersetColors","bottom_margin":"auto","x_ticks_layout":"auto","x_axis_format":"smart_date","left_margin":"auto","y_axis_format":"SMART_NUMBER","y_axis_bounds":[null,null],"rolling_type":"None","comparison_type":"values","annotation_layers":[],"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 8925d0cf-8ec0-4345-8072-3135de352451
+version: 1.0.0
+dataset_uuid: ec061d71-bcfe-4929-a5c6-60242ee382ce

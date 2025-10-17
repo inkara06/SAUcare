@@ -1,0 +1,90 @@
+slice_name: Average Treatment Cost by Type
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  datasource: 5__table
+  viz_type: echarts_timeseries_bar
+  slice_id: 7
+  x_axis: treatment_type
+  x_axis_sort_asc: true
+  x_axis_sort_series: name
+  x_axis_sort_series_ascending: true
+  metrics:
+  - expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      changed_on: '2025-10-14T22:44:27.470548'
+      column_name: cost
+      created_on: '2025-10-14T22:44:27.470547'
+      description: null
+      expression: null
+      extra: null
+      filterable: true
+      groupby: true
+      id: 38
+      is_active: true
+      is_dttm: false
+      python_date_format: null
+      type: NUMERIC(10, 2)
+      type_generic: 0
+      uuid: 570154a5-ec18-4fd3-929c-927c7f339c38
+      verbose_name: null
+    aggregate: AVG
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: AVG(cost)
+    optionName: metric_b88vwqg3dna_zva1fl5h3t
+  groupby: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: treatment_date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_desc: true
+  row_limit: 1000
+  truncate_metric: true
+  show_empty_columns: true
+  comparison_type: values
+  annotation_layers: []
+  forecastPeriods: 10
+  forecastInterval: 0.8
+  orientation: horizontal
+  x_axis_title: Treatment Type
+  x_axis_title_margin: 100
+  y_axis_title: Average Cost ($)
+  y_axis_title_margin: 30
+  y_axis_title_position: Left
+  sort_series_type: sum
+  color_scheme: presetColors
+  time_shift_color: true
+  only_total: true
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  x_axis_time_format: smart_date
+  y_axis_format: SMART_NUMBER
+  y_axis_bounds:
+  - null
+  - null
+  truncateXAxis: true
+  rich_tooltip: true
+  showTooltipTotal: true
+  tooltipTimeFormat: smart_date
+  extra_form_data: {}
+  dashboards:
+  - 2
+query_context: '{"datasource":{"id":5,"type":"table"},"force":false,"queries":[{"filters":[{"col":"treatment_date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[{"columnType":"BASE_AXIS","sqlExpression":"treatment_type","label":"treatment_type","expressionType":"SQL"}],"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"changed_on":"2025-10-14T22:44:27.470548","column_name":"cost","created_on":"2025-10-14T22:44:27.470547","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":38,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"NUMERIC(10,
+  2)","type_generic":0,"uuid":"570154a5-ec18-4fd3-929c-927c7f339c38","verbose_name":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(cost)","optionName":"metric_b88vwqg3dna_zva1fl5h3t"}],"orderby":[[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"changed_on":"2025-10-14T22:44:27.470548","column_name":"cost","created_on":"2025-10-14T22:44:27.470547","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":38,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"NUMERIC(10,
+  2)","type_generic":0,"uuid":"570154a5-ec18-4fd3-929c-927c7f339c38","verbose_name":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(cost)","optionName":"metric_b88vwqg3dna_zva1fl5h3t"},false]],"annotation_layers":[],"row_limit":1000,"series_columns":[],"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"time_offsets":[],"post_processing":[{"operation":"pivot","options":{"index":["treatment_type"],"columns":[],"aggregates":{"AVG(cost)":{"operator":"mean"}},"drop_missing_columns":false}},{"operation":"flatten"}]}],"form_data":{"datasource":"5__table","viz_type":"echarts_timeseries_bar","slice_id":7,"x_axis":"treatment_type","x_axis_sort_asc":true,"x_axis_sort_series":"name","x_axis_sort_series_ascending":true,"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"changed_on":"2025-10-14T22:44:27.470548","column_name":"cost","created_on":"2025-10-14T22:44:27.470547","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":38,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"NUMERIC(10,
+  2)","type_generic":0,"uuid":"570154a5-ec18-4fd3-929c-927c7f339c38","verbose_name":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(cost)","optionName":"metric_b88vwqg3dna_zva1fl5h3t"}],"groupby":[],"adhoc_filters":[{"clause":"WHERE","subject":"treatment_date","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"order_desc":true,"row_limit":1000,"truncate_metric":true,"show_empty_columns":true,"comparison_type":"values","annotation_layers":[],"forecastPeriods":10,"forecastInterval":0.8,"orientation":"horizontal","x_axis_title":"Treatment
+  Type","x_axis_title_margin":100,"y_axis_title":"Average Cost ($)","y_axis_title_margin":30,"y_axis_title_position":"Left","sort_series_type":"sum","color_scheme":"presetColors","time_shift_color":true,"only_total":true,"show_legend":true,"legendType":"scroll","legendOrientation":"top","x_axis_time_format":"smart_date","y_axis_format":"SMART_NUMBER","y_axis_bounds":[null,null],"truncateXAxis":true,"rich_tooltip":true,"showTooltipTotal":true,"tooltipTimeFormat":"smart_date","extra_form_data":{},"dashboards":[2],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 558f712f-f9b1-49fa-8184-4a3523715b59
+version: 1.0.0
+dataset_uuid: 5cfa4d21-8c63-4493-8761-30a8db00a837

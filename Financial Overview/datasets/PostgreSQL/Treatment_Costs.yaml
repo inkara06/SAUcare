@@ -1,0 +1,55 @@
+table_name: Treatment Costs
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: hospital_management
+schema: null
+sql: "SELECT \n    t.cost\nFROM treatments t\nWHERE t.cost IS NOT NULL AND t.cost\
+  \ > 0;\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 1fc33a07-d77e-45e6-a1d2-71a4f9036132
+metrics:
+- metric_name: median
+  verbose_name: median_cost
+  metric_type: null
+  expression: 'PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY cost)
+
+    '
+  description: null
+  d3format: null
+  currency: null
+  extra: {}
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: cost
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 863ccd17-dbed-4373-9e68-ac408def1dd3

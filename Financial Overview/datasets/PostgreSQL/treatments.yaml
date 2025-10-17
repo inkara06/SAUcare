@@ -1,0 +1,165 @@
+table_name: treatments
+main_dttm_col: treatment_date
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: hospital_management
+schema: public
+sql: ''
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 5cfa4d21-8c63-4493-8761-30a8db00a837
+metrics:
+- metric_name: growth
+  verbose_name: growth_percent
+  metric_type: null
+  expression: "(SUM(CASE WHEN EXTRACT(YEAR FROM treatment_date) = 2024 THEN cost ELSE\
+    \ 0 END) - \n SUM(CASE WHEN EXTRACT(YEAR FROM treatment_date) = 2023 THEN cost\
+    \ ELSE 0 END)) /\n NULLIF(SUM(CASE WHEN EXTRACT(YEAR FROM treatment_date) = 2023\
+    \ THEN cost ELSE 0 END), 0) * 100\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: Median
+  verbose_name: median_cost
+  metric_type: null
+  expression: 'PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY cost)
+
+    '
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: average
+  verbose_name: AVG_cost
+  metric_type: null
+  expression: AVG(cost)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: cost_category
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: null
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: "CASE \n    WHEN cost < 100 THEN 'Low'\n    WHEN cost BETWEEN 100 AND\
+    \ 500 THEN 'Medium'\n    WHEN cost > 500 THEN 'High'\n    ELSE 'Unknown'\nEND\n"
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cost_normalized
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: null
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: '(cost - 51.29) / (4973.63 - 51.29)
+
+    '
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cost
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC(10, 2)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: treatment_date
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: treatment_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: appointment_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: treatment_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: description
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 863ccd17-dbed-4373-9e68-ac408def1dd3

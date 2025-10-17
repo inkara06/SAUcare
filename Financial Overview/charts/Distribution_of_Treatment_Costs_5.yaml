@@ -1,0 +1,28 @@
+slice_name: Distribution of Treatment Costs
+description: null
+certified_by: null
+certification_details: null
+viz_type: histogram_v2
+params:
+  datasource: 7__table
+  viz_type: histogram_v2
+  column: cost
+  groupby: []
+  adhoc_filters: []
+  row_limit: 1000
+  bins: 20
+  color_scheme: supersetColors
+  show_legend: true
+  x_axis_title: Treatment Cost ($)
+  x_axis_format: SMART_NUMBER
+  y_axis_title: Number of Treatments
+  y_axis_format: SMART_NUMBER
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":7,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["cost"],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[{"operation":"histogram","options":{"column":"cost","groupby":[],"bins":20}}]}],"form_data":{"datasource":"7__table","viz_type":"histogram_v2","column":"cost","groupby":[],"adhoc_filters":[],"row_limit":1000,"bins":20,"color_scheme":"supersetColors","show_legend":true,"x_axis_title":"Treatment
+  Cost ($)","x_axis_format":"SMART_NUMBER","y_axis_title":"Number of Treatments","y_axis_format":"SMART_NUMBER","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: ba5f376d-a51f-4ddf-bf46-c2bfd352c43c
+version: 1.0.0
+dataset_uuid: 1fc33a07-d77e-45e6-a1d2-71a4f9036132
