@@ -1,0 +1,47 @@
+patient_count:
+  query: "SELECT COUNT(*) AS cnt FROM patients;"
+  metrics:
+    - cnt:
+        usage: GAUGE
+        description: "number of patients"
+
+doctor_count:
+  query: "SELECT COUNT(*) AS cnt FROM doctors;"
+  metrics:
+    - cnt:
+        usage: GAUGE
+
+appointments_by_status:
+  query: "SELECT status, COUNT(*) AS cnt FROM appointments GROUP BY status;"
+  metrics:
+    - cnt:
+        usage: GAUGE
+        labels: [status]
+appointments_status:
+  query: "SELECT
+           COUNT(*) FILTER (WHERE status='Scheduled') AS scheduled_count,
+           COUNT(*) FILTER (WHERE status='Completed') AS completed_count,
+           COUNT(*) FILTER (WHERE status='Cancelled') AS cancelled_count
+         FROM appointments;"
+  metrics:
+    - scheduled_count: gauge
+    - completed_count: gauge
+    - cancelled_count: gauge
+
+
+    
+queries:
+  - name: "pg_stat_user_tables"
+    query: "SELECT relname, n_live_tup, n_dead_tup FROM pg_stat_user_tables"
+    metrics:
+      - n_live_tup:
+          usage: "gauge"
+      - n_dead_tup:
+          usage: "gauge"
+
+  - name: "pg_stat_user_tables_analyze_count"
+    query: "SELECT relname, analyze_count FROM pg_stat_user_tables"
+    metrics:
+      - analyze_count:
+          usage: "counter"
+
